@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery学生系统管理</title>
+    <link rel="stylesheet" href="../css/jQuery学生管理系统.css">
+    <link rel="icon" href="../img/jQuery学习管理系统/logo.ico">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                <img src="../img/jQuery学习管理系统/logo.png" alt="">
+                <span>渡一教育</span>
+            </div>
+            <div class="search">
+                <input type="text" id="search-word" placeholder="试试鼠标右键点我">
+                <input type="submit" value="search" id="search-submit">
+            </div>
+        </div>
+        <div class="left-menu">
+            <dl class="left-menu-list">
+                <dt>学生管理</dt>
+                <dd class="active list" showContentId="right-student-list">学生列表</dd>
+                <dd class="add" showContentId="right-add-student">新增学生</dd>
+            </dl>
+        </div>
+        <!-- 右边内容 -->
+        <div class="right-content">
+            <!-- 学生列表 -->
+            <div class="student-list content content-active" id="right-student-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>学号</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>邮箱</th>
+                            <th>年龄</th>
+                            <th>手机号</th>
+                            <th>住址</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- <tr>
+                            <td>001</td>
+                            <td>小明</td>
+                            <td>男</td>
+                            <td>888@.com</td>
+                            <td>18</td>
+                            <td>18888888888</td>
+                            <td>北京</td>
+                            <td>
+                                <button class="btn edit">编辑</button>
+                                <button class="btn del">删除</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <!-- <div class="page">
+                    <button class="page-prev">上一页</button>
+                    <button class="page-next">下一页</button>
+                </div> -->
+
+
+                <div id="turnPage"></div>
+                <!-- 弹出框 dialog 遮罩层mask -->
+                <div class="dialog">
+                    <div class="mask"></div>
+                    <div class="dialog-conter">
+                        <h3>编辑学生</h3>
+                        <!-- 编辑 学生 表单 -->
+                        <form action="" id="edit-student-form">
+                            <div><label for="name">姓名</label><input type="text" id="name" name="name"></div>
+                            <div>
+                                <label for="">性别</label>
+                                <input type="radio" id="edit-male" name="sex" value="0" checked>                       
+                                <label for="edit-male" class="radio-label">男</label>
+                                <input type="radio" id="edit-female" name="sex" value="1">
+                                <label for="edit-female" class="radio-label">女</label>
+                            </div>
+                            <div><label for="sNo">学号</label><input type="text" id="sNo" name="sNo" disabled></div>
+                            <div><label for="email">邮箱</label><input type="text" id="email" name="email"></div>
+                            <div><label for="birth">出生年</label><input type="text" id="birth" name="birth"></div>
+                            <div><label for="phone">手机号</label><input type="text" id="phone" name="phone"></div>
+                            <div><label for="address">住址</label><input type="text" id="address" name="address"></div>
+                            <div class="button">
+                                <label for=""></label>
+                                <!-- 编辑 学生 提交按钮 -->
+                                <input type="submit" value="提交" class="btn" id="edit-student-btn">    
+                                <input type="reset"  value="重置" class="btn">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 新增学生 -->
+            <div class="add-student content" id="right-add-student">
+                <form action="" id="add-student-form">
+                    <div><label for="name">姓名</label><input type="text" id="name" name="name"></div>
+                    <div>
+                        <label for="">性别</label>
+                        <input type="radio" id="male" name="sex" value="0" checked>                       
+                        <label for="male" class="radio-label">男</label>
+                        <input type="radio" id="female" name="sex" value="1">
+                        <label for="female" class="radio-label">女</label>
+                    </div>
+                    <div><label for="sNo">学号</label><input type="text" id="sNo" name="sNo"></div>
+                    <div><label for="email">邮箱</label><input type="text" id="email" name="email"></div>
+                    <div><label for="birth">出生年</label><input type="text" id="birth" name="birth"></div>
+                    <div><label for="phone">手机号</label><input type="text" id="phone" name="phone"></div>
+                    <div><label for="address">住址</label><input type="text" id="address" name="address"></div>
+                    <div class="button">
+                        <label for=""></label>
+                        <!-- 添加 学生 提交按钮 -->
+                        <input type="submit" value="提交" class="btn" id="add-student-btn">
+                        <input type="reset"  value="重置" class="btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../../turnPage/turnPage.js"></script>
+    <script src="../js/myContextMenu.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
