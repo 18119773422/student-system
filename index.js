@@ -141,9 +141,7 @@ function bindEvent() {
                     sNo: tabaData[index].sNo
                 }, function (res) {
                     alert(res.msg);
-                    $('.student-list').fadeOut();
-                    getTableData();
-                    $('.student-list').fadeIn();
+                    $('.list').trigger('click');
                 })
             }
         })
