@@ -1,0 +1,227 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+html, body, .wrapper {
+    height: 100%;
+}
+.wrapper .header {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background-color: #354457;
+}
+.wrapper .header .logo {
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 14px;
+    color: #b3bcc5;
+    padding-left: 20px;
+}
+.wrapper .header .logo img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+/* search */
+.header .search {
+    opacity: 0.1;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: 15px;
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+}
+.header:hover .search {
+    opacity: 1;
+}
+.header .search #search-word {
+    padding-left: 10px;
+    font-size: 16px;
+    width: 310px;
+    height: 36px;
+    border: none;
+    background-color: #fff;
+    outline: none;
+}
+.header .search #search-submit {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    outline: none;
+    display: inline-block;
+    /* border: none; */
+    border: 1px solid #fff;
+    background-color: #354457;
+    color: #e3e4e5;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.wrapper .left-menu {
+    position: relative;
+    width: 200px;
+    height: calc(100% - 70px);
+    background-color:#4d5e70;
+    color: #b3bcc5;
+}
+.wrapper .left-menu dl dt, .wrapper .left-menu dl dd {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.wrapper .left-menu dl dt {
+    font-weight: bold;
+    padding-left: 8px;
+}
+.wrapper .left-menu dl dd {
+    padding-left: 30px;
+    cursor: pointer;
+}
+.wrapper .left-menu dl dd:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #354457
+}
+.wrapper .left-menu dl .active {
+    color: #354457;
+    background-color: #ddd;
+}
+.wrapper .right-content {
+    position: absolute;
+    width: calc(100% - 200px);
+    height: calc(100% - 70px);
+    top: 70px;
+    margin-left: 200px;
+    background-color: #eee;
+}
+.right-content .content {
+    display: none;
+}
+.right-content .student-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.right-content .content.content-active {
+    display: block;
+}
+.right-content .content table {
+    width: 100%;
+    text-align: center;
+}
+.right-content .content table thead {
+    background-color: #e3e8ee;
+    color: #646987;
+    font-size: 14px;
+}
+.right-content .content table tbody {
+    background-color: #fff;
+    font-size: 14px;
+}
+.right-content .content table tr td .btn {
+    padding: 3px 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+} 
+.right-content .content table tr td .edit {
+    background-color: #5cb85c;
+}
+.right-content .content table tr td .btn.edit:hover {
+    background-color: #398439;
+    border-color: #255625;
+    color: #fff;
+}
+.right-content .content table tr td .del {
+    background-color: #d9534f;
+}
+.right-content .content table tr td .btn.del:hover {
+    background-color: #c9302c;
+    color: #fff;
+}
+.right-content .content table tr {
+    height: 30px;
+    line-height: 30px;
+}
+.right-content .add-student {
+    margin:  50px auto;
+    width: 400px;
+}
+.right-content form div {
+    margin: 18px 0px;
+}
+.right-content form label,
+.right-content form input
+{
+    font-size: 16px;
+}
+.right-content form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+.right-content form label.radio-label {
+    width: 20px;
+}
+.right-content form .btn {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+}
+.button {
+    font-size: 0px;
+}
+
+/* 弹出框 添加学生 */
+.dialog {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: none;
+}
+.dialog.show {
+    display: block;
+}
+.dialog .mask {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.dialog .dialog-conter {
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    left: calc(50% - 250px);
+    top: calc(50% - 225px);
+    background-color: #fff;
+    padding: 10px;
+}
+
+.dialog .dialog-conter form {
+    width: 400px;
+    margin: 0px auto;
+}
+
+/* 分页 */
+#turnPage {
+    position: absolute;
+    right: 100px;
+    bottom: -100px;
+}
