@@ -5,6 +5,43 @@ var tabaData = [];
 var flag = false;
 var searchWord = '';
 var searchSex = -1;
+
+    var manageCookie = {
+        //设置 cookie
+        setCookie: function (name, value, day) {
+            var oDate = new Date();
+            oDate.setTime(oDate.getTime() + day * 3600 * 24 * 1000)
+            document.cookie = name + '=' + value + '; expires=' + oDate +'; path=/';
+            //expires 设置时间；path 设置路径 默认当前所有路径,后续删除操作也是path为/的cookie
+            return this;
+        },
+        //删除 cooki 
+        removeCookie: function (name, ) {
+            return this.setCookie(name, '', -1);
+        },
+        // 获取 cookie 并执行回调函数
+        getCookie: function (name, callback) {
+            // 将字符串类型的cookie按 分号 拆分；
+            var cookieArr = document.cookie.split('; ');
+            var len = cookieArr.length;
+            for (var i = 0; i < len; i++) {
+                //cookie 变成每个独立的数组
+                var temp = cookieArr[i].split('=');
+                //如果需要操作的存在 名为数组第0位，值为第1位
+                if (temp[0] == name) {
+                    typeof callback == 'function' && callback(temp[1]);
+                    return this;
+                }
+            }
+            callback(null) //没有找到，我们传入null，方便后续操作
+            return this;
+        }
+    }
+
+    manageCookie.getCookie('pageSize', function (data) {
+        pageSize = data != null ? data : 5;
+    })
+
 function bindEvent() {
     // student menu click event
     $('.left-menu').on('click', 'dd', function (e) {
@@ -319,6 +356,7 @@ function bindEvent() {
         //如果不填数据就是null然后经过parseInt之后变成 NaN, 将NaN转换为字符串作为比较
         if (('' + num) != 'NaN') {
             pageSize = num;
+            manageCookie.setCookie('pageSize', pageSize, 7);
             getTableData();
             myEvent();
         }
